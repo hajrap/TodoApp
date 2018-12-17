@@ -1,0 +1,67 @@
+body {
+    padding: 50px;
+    font-family: sans-serif;
+  }
+  #app {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(151, 168, 168);
+    width: 400px;
+    height: 370px;
+    position: relative;
+    margin-top: 5%;
+    margin-left: 50%;
+  transform: translate(-50%,-15%);
+  border-radius: 5px;
+  }
+  .TodoHeader
+  {
+    display: grid;
+    grid-template-columns: 80% auto ;
+    grid-gap: 10px;
+    width: 100%;
+  }
+  .todoItem
+  {
+    height: 200px;
+    overflow-y: auto;
+    width: 100%;   
+  }
+  .todoItem >li{
+      list-style: none;
+      background-color: rgba(255,255,255,.5);
+      margin: 5px;
+      height: 30%;
+      border-radius: 5px;
+  }
+  .todoItem >li>a{
+    color: beige;
+    vertical-align: top;
+    text-decoration: blueviolet;
+
+}
+.todoItem>li>input{
+  vertical-align: top;
+  margin-top: 20px;
+  margin-left: 15px;
+  
+
+}
+.todoItem>li>textarea{
+  width:  200px;
+  height: 20px;
+  vertical-align: top;
+  
+}
+  h3{
+      text-align: center;
+  }
+  a{
+    text-align: center;
+  }
+textarea{
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    height: 50px;
+}
