@@ -43,7 +43,7 @@ class TodoList extends Component {
   }
   async componentDidMount() {
     todoAPIObject = new TodoAPI();
-    console.log('test3');
+    console.log('test5');
     await todoAPIObject.getItems();
     let resultState = todoAPIObject.state;
     this.setItemonChange(resultState.items);
@@ -62,11 +62,6 @@ class TodoList extends Component {
       e.target.value = "";
       let resultState = await todoAPIObject.createNewItem(text);
          this.setItemonChange(resultState);
-      // this.setState((prevState) => {
-      //   return {
-      //     items: prevState.items.concat(resultState.items)
-      //   }
-      // });
       this.setTodoError(resultState);
     }
   }
@@ -87,22 +82,25 @@ class TodoList extends Component {
     }
   }
   selectItemHandler(e) {
-    if(e.target.checked)
-    this.state.selectedItems.push(e.target.id);
+    let target=e.target;
+    target.className="selectedItem";
+        document.getElementById("divDelete").style.display='block';
+   // if(e.target.checked)
+    this.state.selectedItems.push(target.id);
   }
  async  clearItemHandler(e) {
   await this.state.selectedItems.forEach(id =>{
       console.log('delete items',id);
       let result=  todoAPIObject.deleteItem(id);
+      console.log('delete result',id,result);
       if (result) {
         this.setItemonChange();
       }
 
     });
-    console.log("clear Item");
   }
   render() {
-    return (<div>
+    return (<div id="todo">
       <TodoHeader itemstate={this.state} clear={this.clearItemHandler}></TodoHeader> 
       < TodoItem itemstate={this.state} select={this.selectItemHandler} delete={this.deleteItemHandler} edit={this.editItemHandler}>
       </TodoItem> 

@@ -26,19 +26,17 @@ export default class TodoAPI {
 
     async createNewItem(text) {
         let result = await this.fetchAPI('post', text);
-        //this.checkResult(result);
         this.state.items.push(result.data);
         this.changeItems(this.state.items);
-        // Append to items (Dont replace)
         return this.state;
     }
 
     async deleteItem(id) {
+        console.log('delete id',id);
         let result = await this.fetchAPI('delete', '', id);
+        console.log('delete',id,result);
        this.changeItems(this.state.items.filter(item => item.id !== id));
-        //return this.checkResult(result);
         return this.checkResult(result);
-        // Filter items, don't replace
     }
 
     async updateItem(id, message) {
@@ -48,12 +46,8 @@ export default class TodoAPI {
             item.text=message;
             return item;
         });
-    
         this.changeItems(this.state.items);
-            
-        // Update the individual item, and call this.changeItems()
         return this.checkResult(result);
-        // Update item in array, dont replace
     }
 
     async fetchAPI(method, text, id) {

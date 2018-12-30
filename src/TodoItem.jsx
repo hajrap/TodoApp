@@ -23,10 +23,8 @@ class TodoItem extends Component{
             <div className="todoItem">
             {
                 items.map(item =>
-                    <li key={item.id} >
-                    <input type="checkbox" id={item.id}  name="todo-item" onClick={this.props.select}></input>
+                    <li key={item.id} id={item.id} onClick={this.props.select} >
                     <textarea placeholder="Add Task.." id={item.id} value={item.text} onChange={this.props.edit}></textarea>
-                    <a href="javascript:;" id={item.id} onClick={this.props.delete} >x</a>
                  </li>
                     )
             }

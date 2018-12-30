@@ -1,67 +1,100 @@
 body {
-    padding: 50px;
-    font-family: sans-serif;
-  }
-  #app {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(151, 168, 168);
-    width: 400px;
-    height: 370px;
-    position: relative;
-    margin-top: 5%;
-    margin-left: 50%;
-  transform: translate(-50%,-15%);
+  padding: 50px;
+  font-family: sans-serif;
+}
+
+#todo {
+  width: 100%;
+  background-color: rgb(230, 245, 247);
+}
+
+#app {
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgb(180, 215, 224);
+  width: 400px;
+  height: 370px;
+  position: relative;
+  margin-top: 5%  ;
+  margin-left: 50%;
+  transform: translate(-50%, -15%);
   border-radius: 5px;
-  }
-  .TodoHeader
-  {
-    display: grid;
-    grid-template-columns: 80% auto ;
-    grid-gap: 10px;
-    width: 100%;
-  }
-  .todoItem
-  {
-    height: 200px;
-    overflow-y: auto;
-    width: 100%;   
-  }
-  .todoItem >li{
-      list-style: none;
-      background-color: rgba(255,255,255,.5);
-      margin: 5px;
-      height: 30%;
-      border-radius: 5px;
-  }
-  .todoItem >li>a{
-    color: beige;
-    vertical-align: top;
-    text-decoration: blueviolet;
 
 }
-.todoItem>li>input{
-  vertical-align: top;
-  margin-top: 20px;
-  margin-left: 15px;
+
+.TodoHeader {
+  display: grid;
+  grid-template-columns: 80% auto;
+  /* grid-gap: 10px; */
+  width: 100%;
+  background-color: rgb(52, 118, 126);
+  border-radius: 5px;
+}
+
+.todoItem {
+  height: 200px;
+  overflow-y: auto;
+  width: 100%;
+ 
+}
+
+.todoItem>li {
+  list-style: none;
+  margin: 5px;
+}
+.todoItem>li:hover {
+  background-color: rgb(175, 239, 245);
+}
+.todoItem>li.selected {
+  background-color: rgb(168, 188, 190);
+}
+.todoItem>li>a {
+  color: beige;
+  float: right;
+  text-decoration: blueviolet;
+  padding-top: 10%;
   
 
 }
-.todoItem>li>textarea{
-  width:  200px;
-  height: 20px;
+
+.todoItem>li>input {
   vertical-align: top;
-  
+  margin-top: 10%;
+
+
 }
-  h3{
-      text-align: center;
-  }
-  a{
-    text-align: center;
-  }
-textarea{
-    padding: 10px;
-    margin: 10px;
-    width: 250px;
-    height: 50px;
+
+.todoItem>li>textarea {
+  width: 90%;
+  height: 60px;
+  border: 2px solid rgba(196, 222, 225);
+  background-color: rgb(36, 227, 248);
+  font-size: 9pt !important;
+}
+
+
+h3 {
+  text-align: center;
+  color: rgb(209, 208, 207);
+}
+
+a {
+  text-align: center;
+}
+
+textarea {
+  font-size: 15pt;
+  width: 90%;
+  height: 80px;
+  box-sizing: border-box;
+  border-radius: 9px;
+  margin-left: 5%;
+}
+.hideDelete {
+  display: none;
+  text-align: center;
+  margin-top: 20%;
+}
+.selectedItem {
+  background-color: rgb(175, 239, 245);
 }

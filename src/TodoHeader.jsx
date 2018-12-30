@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import './index.css'; 
 
 
 class TodoHeader extends Component {
@@ -7,9 +6,11 @@ class TodoHeader extends Component {
     return (
       <div className="TodoHeader">
           
-       <h3>Todo List</h3>
-       <a href="javascript:;" onClick={this.props.clear}>Clear</a>
-      </div>
+       <h3>To-Do List</h3>
+       <div id="divDelete" className="hideDelete">
+       <a href="javascript:;" onClick={this.props.clear}>
+       <img  width="20px" height="20px"   src="http://localhost:9999/images/deletewhite.png"></img></a>
+      </div></div>
     );
   }
 }
